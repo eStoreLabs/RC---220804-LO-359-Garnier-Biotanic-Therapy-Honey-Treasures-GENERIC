@@ -50,7 +50,7 @@
 
 $regular: 'Gotham Book', sans-serif;
 $pink: #e2a9aa;
-$dark-pink: #d49899;
+$dark-orange: #f99201;
 $black: #000000;
 $green: #146b30;
 
@@ -111,17 +111,6 @@ body {
       width: 70%;
       animation: slidedown 0.3s ease-in-out;
     }
-    &__label {
-      position: relative;
-      top: -100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      order: 2;
-      padding: 5px;
-      font-family: 'Gotham Bold', sans-serif;
-    }
     &__label-image {
       width: 80px;
     }
@@ -171,13 +160,13 @@ body {
       font-size: 25px;
       font-family: 'Gotham Black', sans-serif;
       text-transform: uppercase;
-      color: $dark-pink;
+      color: $dark-orange;
     }
 
     &__subtitle {
       @include text;
       font-size: 20px;
-      color: $dark-pink;
+      color: $dark-orange;
       text-transform: uppercase;
     }
     &__img {
@@ -239,7 +228,7 @@ body {
       font-size: 40px;
       text-align: center;
       text-transform: uppercase;
-      color: $dark-pink;
+      color: $dark-orange;
     }
     &__subtitle {
       display: inline-block;
@@ -249,7 +238,7 @@ body {
       font-size: 25px;
       text-align: center;
       text-transform: uppercase;
-      color: $dark-pink;
+      color: $dark-orange;
     }
     &__before-text {
       position: absolute;
@@ -327,7 +316,7 @@ body {
       margin-bottom: 30px;
       font-family: 'Gotham Bold', sans-serif;
       font-size: 20px;
-      color: $dark-pink;
+      color: $dark-orange;
       text-transform: uppercase;
       text-align: center;
     }
@@ -341,7 +330,7 @@ body {
     &__single:hover .es-cross__button {
       -webkit-transform: scale(1.05);
       transform: scale(1.05);
-      background-color: #cf9192;
+      background-color: #8f5503;
     }
 
     &__img {
@@ -351,7 +340,7 @@ body {
     &__name {
       @include text;
       font-family: 'Gotham Bold', sans-serif;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       text-align: center;
     }
     &__subtitle {
@@ -365,7 +354,7 @@ body {
       padding: 10px 30px;
       color: #fff;
       text-decoration: none;
-      background-color: $dark-pink;
+      background-color: $dark-orange;
       border-radius: 10px;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
@@ -409,10 +398,6 @@ body {
         width: 90%;
         top: -50px;
       }
-
-      &__label {
-        top: -50px;
-      }
     }
 
     .es-info {
@@ -436,41 +421,10 @@ body {
 
   @media screen and (min-width: 520px) {
     .es-kv {
-      &__container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        min-height: 462px;
-        padding: 10px;
-        background: url(images/photo.jpg) no-repeat;
-        background-size: auto;
-      }
-      &__logo {
-        flex: 1;
-        flex-basis: 50%;
-        height: 328px;
-        background: none;
-      }
       &__logo-image {
-        width: 274px;
-      }
-      &__packshot {
-        flex: 1;
-        flex-basis: 50%;
-        position: static;
-      }
-      &__label {
-        position: static;
-        margin-bottom: 0px;
-        margin-top: 20px;
-        margin-left: 3%;
-      }
-      &__label-text {
-        width: 110px;
-        color: #fff;
+        width: auto;
       }
     }
-
     .es-info {
       &__container {
         background: url(./images/info-bg.png) no-repeat center;
@@ -545,6 +499,36 @@ body {
   }
 
   @media screen and (min-width: 600px) {
+    .es-kv {
+      &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        min-height: 462px;
+        padding: 10px;
+        background: url(images/photo.jpg) no-repeat;
+        background-size: auto;
+      }
+      &__logo {
+        flex: 1;
+        flex-basis: 50%;
+        height: 328px;
+        background: none;
+      }
+      &__logo-image {
+        width: 274px;
+      }
+      &__packshot {
+        flex: 1;
+        flex-basis: 50%;
+        position: static;
+      }
+      &__label-text {
+        width: 110px;
+        color: #fff;
+      }
+    }
+
     .es-ba {
       &__container {
         position: relative;
@@ -589,12 +573,18 @@ body {
         justify-content: space-around;
         align-items: flex-end;
       }
-      &__single {
-        width: 200px;
-      }
-    }
 
-    .es-cross {
+      &__single {
+        width: auto;
+      }
+      &__name,
+      &__subtitle {
+        font-size: 13px;
+      }
+      &__subtitle {
+        max-width: 210px;
+      }
+
       &__img {
         margin-bottom: 40px;
         max-height: 246px;
@@ -696,7 +686,6 @@ body {
       &__container {
         flex-wrap: nowrap;
         margin-bottom: 15px;
-        height: 350px;
         min-height: auto;
       }
       &__logo {
@@ -706,15 +695,9 @@ body {
         padding-top: 15px;
         width: 240px;
       }
-      &__label {
-        order: -1;
-        margin-top: 10px;
-        align-self: flex-end;
-        margin-bottom: 0;
-      }
       &__packshot {
-        top: 67px;
-        flex-basis: 82%;
+        top: 109px;
+        flex-basis: 65%;
         position: relative;
       }
     }
@@ -747,14 +730,15 @@ body {
   @media screen and (min-width: 1200px) {
     .es-kv {
       &__container {
-        align-items: flex-start;
+        align-items: center;
+        background-size: contain;
       }
       &__image {
-        width: 401px;
+        width: 451px;
         max-width: none;
       }
-      &__label {
-        margin-left: 1%;
+      &__logo-image {
+        margin-left: 200px;
       }
       &__label-image {
         width: 87px;
@@ -762,6 +746,9 @@ body {
     }
 
     .es-info {
+      &__wrapper {
+        margin-bottom: 30px;
+      }
       &__container {
         padding-top: 75px;
         background-position: center 63%;
@@ -781,8 +768,13 @@ body {
       &__single {
         margin-bottom: 0;
       }
+      &__image {
+        &--third {
+          align-self: flex-start;
+        }
+      }
       &__text {
-        margin-bottom: 10px;
+        margin-bottom: 30px;
         margin-left: 28px;
         font-size: 26px;
         line-height: 1.1;
@@ -796,6 +788,10 @@ body {
       }
       &__image {
         width: 51px;
+      }
+      &__packshot {
+        position: relative;
+        top: 50px;
       }
     }
 
@@ -813,18 +809,6 @@ body {
       &__subtitle {
         font-size: 30px;
         text-align: center;
-      }
-    }
-
-    .es-cross {
-      &__single {
-        width: auto;
-      }
-      &__name {
-        font-size: 14px;
-      }
-      &__subtitle {
-        max-width: 160px;
       }
     }
   }
